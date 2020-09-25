@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*,html,body{
+    font-family: 'Courier Prime', monospace;
+}
+
+.editable {
+  -webkit-user-drag: none;
+  cursor: url("/images/dropper.png"), auto;
+}
+
+canvas {
+  position: absolute;
+  border: 1px solid blue;
+  opacity: 0;
+}
+.value{
+    font-weight: bolder;
+    color: black !important;
+}
+.copy{
+    cursor: pointer;
+}
+.color {
+  width: 40px;
+  height: 40px;
+  border: 2px solid indigo;
+  position: absolute;
+  opacity: 0;
+}
+
+.color-box {
+    width: 40px;
+    height: 40px;
+}
+
+.row{
+    position: sticky;
+    background-color: white;
+    top: 10vh;
+}
