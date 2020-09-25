@@ -4,6 +4,7 @@ const editableImg = document.querySelector(".editable");
 const colorVal = document.querySelector(".value");
 const colorBox = document.querySelector(".color");
 const colorBoxFixed = document.querySelector(".color-box");
+const copyBtn = document.querySelector(".copy");
 const fileInput = document.querySelector("#file");
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
@@ -40,3 +41,23 @@ editableImg.addEventListener("click", e => {
     colorVal.setAttribute("value",colorBox.style.backgroundColor)
     colorBoxFixed.style.backgroundColor=colorVal.getAttribute("value");
 });
+
+copyBtn.addEventListener("click", e => {
+    navigator.permissions.query({name: "clipboard-write"}).then(result => {
+        if (result.state == "granted" || result.state == "prompt") {
+            navigator.clipboard.writeText(colorVal.getAttribute("value"))
+            .then( () => M.toast({html: "Copied to clipboard"}))
+            .catch(err => M.toast({html: "Copied to clipboard"}));
+        }
+      });
+})
+
+//#region service worker
+if("serviceWorker" in navigator){
+    navigator.serviceWorker.register("/serviceWorker.js")
+    .then(reg => console.log("Service worker registered"))
+    .catch(err => console.log("Service worker not registered"));
+} else {
+    console.log("Service worker not available");
+}
+//#endregion

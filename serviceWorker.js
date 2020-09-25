@@ -1,17 +1,18 @@
-const staticCacheName = "vw-static-v1";
+const staticCacheName = "color-picker-v1";
 const staticCacheAssets = [
     "/",
     "/index.html",
-    "/offline.html",
-    "/src/styles.css",
-    "/src/sidenav.css",
-    "/src/index.js",
-    "/src/sidenav.js",
-    "/images/storm.png",
+    "/src/main.css",
+    "/src/wtf-forms.css",
+    "/src/main.js",
+    "/images/dropper.png",
+    "/images/dropper3.png",
     "/images/icons/favicon.ico",
-    "https://kit.fontawesome.com/60bdf815fa.js",
-    "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
-    "https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Indie+Flower&display=swap",
+    "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css",
+    "https://fonts.googleapis.com/icon?family=Material+Icons",
+    "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap",
+    "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"
 ]
 
 self.addEventListener("install", event => {
@@ -37,6 +38,6 @@ self.addEventListener("fetch", event => {
     event.respondWith(
         caches.match(event.request)
         .then( response => response || fetch(event.request))
-        .catch( err => caches.match("/offline.html"))
+        .catch( err => caches.match("/index.html"))
     );
 });

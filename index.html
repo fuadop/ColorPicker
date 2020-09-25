@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme_color" content="indigo">
     <link rel="shortcut icon" href="/images/icons/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
      <!-- Compiled and minified CSS -->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -11,7 +13,7 @@
      <link rel="stylesheet" href="/src/main.css">
 
 
-    <title></title>
+    <title>Color Picker🩸</title>
 </head>
 <body>
     <header>
@@ -23,7 +25,7 @@
     </header>
     <main>
         <div class="container">
-            <p class="center-align flow-text">Click to get color RGB</p>
+            <p class="center-align flow-text">Click Image position to get RGB</p>
            <div class="row">
                <div class="col s12 m6">
                 <p class="flow-text"> Select an Image: </p>
@@ -37,7 +39,7 @@
                    <div class="input-field valign-wrapper">
                         <div class="color-box"></div>
                         <input type="text" value="" class="value" disabled>
-                        <i class="material-icons right tooltipped copy" data-position="top" data-tooltip="Copy to clipboard">content_copy</i>
+                        <i class="material-icons right tooltipped copy" data-position="bottom" data-tooltip="Copy to clipboard">content_copy</i>
                     </div>
                </div>
            </div>
